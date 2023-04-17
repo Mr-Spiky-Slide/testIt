@@ -93,6 +93,11 @@ public class PokerGame {
         return false;
     }
 
+    /**
+     *
+     * @param hand
+     * @return
+     */
     public static boolean straight(Card[] hand){
         Arrays.sort(hand, Comparator.comparingInt(Card::getValue));
         for (int i = 0; i < hand.length - 1; i++) {
