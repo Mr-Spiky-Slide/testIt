@@ -87,22 +87,23 @@ public class PokerGame {
      */
     public static boolean fullHouse(Card[] hand){
         Arrays.sort(hand, Comparator.comparingInt(Card::getValue));
-        for (int i = 0; i < hand.length - 1; i++) {
-            if (((hand[i].getValue() == hand[i+1].getValue()) && (hand[i].getValue() == hand[i+2].getValue()))  && (hand[i+3].getValue() == hand[i+4].getValue())) return true;
-        }
+            if (((hand[0].getValue() == hand[1].getValue()) && (hand[0].getValue() == hand[2].getValue()))  && (hand[3].getValue() == hand[4].getValue())) return true;
+
         return false;
     }
 
     /**
-     *
+     *This goes through the sorted array and checks if the next card in the array is in sequence
      * @param hand
      * @return
      */
     public static boolean straight(Card[] hand){
         Arrays.sort(hand, Comparator.comparingInt(Card::getValue));
-        for (int i = 0; i < hand.length - 1; i++) {
-            if (hand[i].getValue() == hand[i+1].getValue()+1 ) return true;
-        }
+            if ((hand[0].getValue() == hand[1].getValue()+1) &&
+                    (hand[0].getValue() == hand[2].getValue()+2) &&
+                    (hand[0].getValue() == hand[3].getValue()+3) &&
+                    (hand[0].getValue() == hand[4].getValue()+4)) return true;
+
         return false;
     }
 }

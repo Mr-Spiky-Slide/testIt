@@ -42,4 +42,6 @@ public class PokerGameTest {
     @Test
     public void fullHouseTest() { assertTrue("A full house should have matched.", PokerGame.fullHouse(hand));}
 
+    @Test
+    public void straightTest() { assertFalse("A straight should have matched.", PokerGame.straight(hand));}
 }
